@@ -1,9 +1,4 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
-const util = require('util')
-const readFile = util.promisify(fs.readFile)
 const Routes = require('./routes/index')
 const apiRoutes = require('./routes/api')
 
@@ -21,8 +16,3 @@ app.use('/', apiRoutes)
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
 );
-
-
-// heroku url(s)
-// heroku  https://git.heroku.com/cryptic-bastion-86548.git (fetch)
-// heroku  https://git.heroku.com/cryptic-bastion-86548.git (push)
