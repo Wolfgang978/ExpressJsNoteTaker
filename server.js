@@ -4,7 +4,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const util = require('util')
 const readFile = util.promisify(fs.readFile)
-const htmlRoutes = require('./routes/html')
+const Routes = require('./routes/index')
 const apiRoutes = require('./routes/api')
 
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use('/', htmlRoutes)
+app.use('/', Routes)
 
 app.use('/', apiRoutes)
 app.listen(port, () =>
